@@ -1,0 +1,54 @@
+$primary: #835117;
+$danger: brown;
+$secondary: lightgray;
+$body-bg: #208865;
+$body-color: white;
+$backgroundColor: $body-bg;
+$rowHoverBackground: lighten($backgroundColor, 4);
+$headerBackgroundColor: lighten($backgroundColor, 7.5);
+$border-color: #835117;
+
+// $component-active-color: red;
+// $component-active-bg: lighten(#208865, 4);
+
+
+$input-bg: lighten($body-bg, 4);
+$input-color: $body-color;
+$custom-file-color: lighten($body-bg, 4);
+$input-disabled-bg: darken($body-bg, 4);
+
+@font-face {
+    font-family: "Zombie";
+    src: url("/assets/Beware of the Zombies.ttf");
+}
+
+@font-face {
+    font-family: "Bree Serif";
+    src: url("/assets/BreeSerif-Regular.ttf");
+}
+
+* {
+    font-family: "Bree Serif";
+    font-size: 16px;
+    letter-spacing: 2px;
+}
+
+h1,
+h2,
+h3,
+.tabulator-headers * {
+    font-family: "Zombie";
+    letter-spacing: 4px;
+    font-size: 18px;
+}
+
+header *{
+    font-family: "Zombie";
+}
+
+.tabulator .tabulator-header {
+    border-top: 0 !important;
+}
+
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
+@import "./tabulator/tabulator_bootstrap4.scss";

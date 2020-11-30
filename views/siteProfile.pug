@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  backend-data(hidden, isadmin=Number(!!session.isAdmin))=profiles
+  if session.isAdmin
+    .border-bottom.pb-2.mb-2
+      a.btn.btn-primary.mr-1(href="/user") Nutzer
+      a.btn.btn-primary.mr-1(href="/edit/0")
+        i.fa.fa-plus
+        span.ml-1 Neu
+      a.btn.btn-primary.mr-1(href="/qr")
+        i.fa.fa-qrcode
+        span.ml-1 QR Codes
+  table.table.tab-table
+  script(src="js/profile.js" crossorigin="anonymous")

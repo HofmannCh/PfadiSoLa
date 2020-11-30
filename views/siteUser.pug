@@ -1,0 +1,11 @@
+extends layout
+
+block content
+  backend-data(hidden)=users
+  .border-bottom.pb-2.mb-2
+    a.btn.btn-primary.mr-1(href="/") Home
+    a.btn.btn-primary.mr-1(href="/register")
+      i.fa.fa-plus
+      span.ml-1 Register
+  table.table.tab-table
+  script(src="js/user.js" crossorigin="anonymous")

@@ -1,0 +1,27 @@
+doctype html
+html
+  head
+    title= title
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    meta(name="theme-color" content="#2f4f4f")
+    link(rel="shortcut icon" type="image/png" href="/assets/zombie.png")
+    script(src="https://code.jquery.com/jquery-3.5.1.min.js" crossorigin="anonymous")
+    link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css')
+
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/tabulator/4.6.3/js/tabulator.min.js")
+    
+    link(rel='stylesheet', href='/stylesheets/style.css')
+  body
+    main.container.my-2
+      .row
+        header.col-12.d-flex.justify-content-between
+            h1.d-inline-block= title
+            div.d-flex.align-items-center
+              if session.authorised
+                  a.align-top.ml-2.btn.btn-sm.btn-outline-secondary(href="/user/editPw/")= session.name
+                  a.align-top.ml-2.btn.btn-sm.btn-primary(href="/exit") Ausloggen
+        .col-12
+          .border-bottom.my-2
+      .row
+        .col-12
+          block content

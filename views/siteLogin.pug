@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  form(method='POST')
+    input(type='hidden', name='returnUrl', value=returnUrl)
+    div.form-group
+      label(for='name')
+        b Pfadiname
+      input.form-control#name(type='text', placeholder='Pfadinamen einfügen', name='name', required='required')
+    div.form-group
+      label(for='psw')
+        b Passwort
+      input.form-control#psw(type='password', placeholder='Passwort einfügen', name='psw', required='required')
+    
+    button.btn.btn-primary(type='submit') Login

@@ -1,0 +1,26 @@
+html
+    head
+        title QR Codes
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        script(src="https://code.jquery.com/jquery-3.5.1.min.js" crossorigin="anonymous")
+        script(src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js")
+        link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css')
+
+    body.container.p-3
+        style
+            | @media print {
+            | body {
+            |   size: landscape;
+            |   margin: 0.5cm 0.5cm 0.5cm 0.5cm;
+            | }
+            | .profile {
+            |   page-break-inside: avoid;
+            |
+            | }
+        for p of profiles
+            .profile.row.mb-2.border
+                img.mr-4.p-3(src=p.data, alt=`qr code from ${p.name}`, width=150, height=150)
+                div.py-2
+                    p.p-0.m-1= `Name: `
+                        b=`${p.name}`
+

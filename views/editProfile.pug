@@ -1,0 +1,24 @@
+extends layout
+
+block content
+  small.text-secondary= uuid
+  form(method='POST', action=`/edit/${id}/save`)
+    input(type="hidden", value=id)
+    div.form-group
+      label(for='fname')
+        b Vorname
+      input.form-control#fname(type='text', placeholder='', name='fname', required='required', value=fname)
+    div.form-group
+      label(for='lname')
+        b Nachname
+      input.form-control#lname(type='text', placeholder='', name='lname', value=lname)
+    div.form-group
+      label(for='sname')
+        b Pfadiname
+      input.form-control#sname(type='text', placeholder='', name='sname', value=sname)
+    div.form-group-range
+      label(for='zombie_level')
+        b Zombielevel
+      input.form-control-range#zombie_level(type='range', placeholder='', name='zombie_level', value=zombie_level, min=0, max=100)
+    button.btn.btn-primary.float-right(type='submit') Speichern
+    a.btn.btn-secundary.float-right.mr-1(href="/") Zurück

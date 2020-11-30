@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  form(method='POST', action=`/user/editPw/${id}/save`)
+    input(type="hidden", value=id)
+    h3=`Passwort von ${name} aendern`
+    div.form-group
+      label(for='psw')
+        b Neues Passwort
+      input.form-control#psw(type='password', placeholder='', name='psw', required='required')
+    button.btn.btn-primary.float-right(type='submit') Speichern
+    a.btn.btn-secundary.float-right.mr-1(href="/user") Zurück

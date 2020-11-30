@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  form(method='POST', action=`/user/edit/${id}/save`)
+    input(type="hidden", value=id)
+    div.form-group
+      label(for='name')
+        b Name
+      input.form-control#name(type='text', placeholder='', name='name', required='required', value=name)
+    div.form-check
+      input.form-check-input#isadmin(type='checkbox', name='isadmin', checked=isadmin)
+      label.form-check-label(for='isadmin')
+        b Ist Admin
+    button.btn.btn-primary.float-right(type='submit') Speichern
+    a.btn.btn-secundary.float-right.mr-1(href="/user") Zurück

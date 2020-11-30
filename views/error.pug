@@ -1,0 +1,7 @@
+extends layout
+
+block content
+  h1= message
+  b.btn.btn-primary(onclick="window.history.back();") Zurück
+  h2= error.status
+  pre= error.stack
